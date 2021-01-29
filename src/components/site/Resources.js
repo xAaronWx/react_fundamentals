@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Resources() {
+const Resources = () => {
   return (
     <div className="main">
       <div className="mainDiv">
@@ -105,4 +105,6 @@ export default function Resources() {
       </div>
     </div>
   );
-}
+};
+
+export default Resources;

@@ -3,7 +3,7 @@ import { Route, Link, Switch } from "react-router-dom";
 import Home from "./Home";
 import Resources from "./Resources";
 
-export default function Sidebar() {
+const Sidebar = () => {
   return (
     <div className="sidebar">
       <div className="sidebar-list-styling">
@@ -35,6 +35,6 @@ export default function Sidebar() {
       </div>
     </div>
   );
-}
+};
 
 export default Sidebar;

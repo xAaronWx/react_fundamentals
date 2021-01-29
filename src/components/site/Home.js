@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default function Home() {
+const Home = () => {
   return (
     <div className="main">
       <div className="mainDiv">
@@ -40,12 +40,12 @@ export default function Home() {
             there...
           </li>
           <li>
-            <link to="/resources">React Resources</link>
+            <Link to="/resources">React Resources</Link>
           </li>
         </ul>
       </div>
     </div>
   );
-}
+};
 
 export default Home;
