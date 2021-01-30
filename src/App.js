@@ -6,9 +6,9 @@ import Footer from "./components/site/Footer";
 import Sidebar from "./components/site/Sidebar";
 import { BrowserRouter as Router } from "react-router-dom";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
+    <div>
       <Header />
       <Router>
         <Sidebar />
@@ -16,6 +16,6 @@ function App() {
       <Footer />
     </div>
   );
-}
+};
 
 export default App;

@@ -1,5 +1,6 @@
 import React from "react";
-import { Route, Link, Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Home from "./Home";
 import Resources from "./Resources";
 
@@ -9,11 +10,10 @@ const Sidebar = () => {
       <div className="sidebar-list-styling">
         <ul className="sidebar-list list-unstyled">
           <li>
-            <Link to="/">Home</Link>{" "}
+            <Link to="/">Home</Link>
           </li>
           <li>
-            {" "}
-            <Link to="/functionalcomponent ">Functional Component</Link>
+            <Link to="/functionalcomponent">Functional Component</Link>
           </li>
           <li>
             <Link to="/resources">Resources</Link>
@@ -22,14 +22,11 @@ const Sidebar = () => {
       </div>
       <div className="sidebar-route">
         <Switch>
-          <Route exact path="/home">
+          <Route exact path="/Home">
             <Home />
           </Route>
           <Route exact path="/resources">
             <Resources />
-          </Route>
-          <Route exact path="/">
-            <Home />
           </Route>
         </Switch>
       </div>
