@@ -30,6 +30,8 @@ export default State;
 function StateExample() {
   const [text, setText] = useState("initial value");
   const [likeNum, setLikeNum] = useState(0);
+  const [textColor, setTextColor] = useState("blue");
+
   return (
     <div>
       <input value={text} onChange={(e) => setText(e.target.value)} />
@@ -41,6 +43,15 @@ function StateExample() {
         onClick={(e) => setLikeNum(likeNum + 1)}
       />
       <span>{likeNum}</span>
+      <br />
+      <br />
+      <h2
+        style={{ color: textColor }}
+        onMouseEnter={(e) => setTextColor("red")}
+        onMouseLeave={(e) => setTextColor("blue")}
+      >
+        This text will change color on hover
+      </h2>
     </div>
   );
 }
