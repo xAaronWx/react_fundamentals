@@ -22,22 +22,36 @@ const PropDemo = () => {
     color === "white" ? setColor("pink") : setColor("white");
   };
 
+  const toggleBorderRadius = () => {
+    borderRadius === "5px" ? setBorderRadius("50px") : setBorderRadius("5px");
+  };
+
+  const togglebackgroundColor = () => {
+    backgroundColor === "purple"
+      ? setBackgroundColor("black")
+      : setBackgroundColor("purple");
+  };
+
+  const toggletextAlign = () => {
+    textAlign === "center" ? setTextAlign("right") : setTextAlign("center");
+  };
+
   return (
     <div className="main">
       <div className="mainDiv">
         <div style={styles}>
+          <FunctionalComponent string="Color Toggle" function={toggleColor} />
           <FunctionalComponent
-            string="Will this display?"
-            function={toggleColor}
-          />
-          <FunctionalComponent string="This string" function={toggleColor} />
-          <FunctionalComponent
-            string="is being sent from"
-            function={toggleColor}
+            string="Border Radius Toggle"
+            function={toggleBorderRadius}
           />
           <FunctionalComponent
-            string="a single const (props)"
-            function={toggleColor}
+            string="Background Color"
+            function={togglebackgroundColor}
+          />
+          <FunctionalComponent
+            string="Text Align Toggle"
+            function={toggletextAlign}
           />
         </div>
       </div>
@@ -50,6 +64,14 @@ const FunctionalComponent = (props) => {
     <div>
       <p>{props.string}</p>
       <button onClick={props.function}>Press Me</button>
+    </div>
+  );
+};
+
+const TinyComponent = (props) => {
+  return (
+    <div>
+      <p>The current style is : {props.selectedStyle}</p>
     </div>
   );
 };
