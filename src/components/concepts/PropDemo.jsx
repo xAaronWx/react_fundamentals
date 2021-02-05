@@ -40,18 +40,25 @@ const PropDemo = () => {
     <div className="main">
       <div className="mainDiv">
         <div style={styles}>
-          <FunctionalComponent string="Color Toggle" function={toggleColor} />
+          <FunctionalComponent
+            string="Color Toggle"
+            function={toggleColor}
+            selectedStyle={color}
+          />
           <FunctionalComponent
             string="Border Radius Toggle"
             function={toggleBorderRadius}
+            selectedStyle={borderRadius}
           />
           <FunctionalComponent
             string="Background Color"
             function={togglebackgroundColor}
+            selectedStyle={backgroundColor}
           />
           <FunctionalComponent
             string="Text Align Toggle"
             function={toggletextAlign}
+            selectedStyle={textAlign}
           />
         </div>
       </div>
@@ -64,6 +71,7 @@ const FunctionalComponent = (props) => {
     <div>
       <p>{props.string}</p>
       <button onClick={props.function}>Press Me</button>
+      <TinyComponent selectedStyle={props.selectedStyle} />
     </div>
   );
 };
