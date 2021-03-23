@@ -1,14 +1,20 @@
 import React, { Component } from "react";
+import { FaThumbsUp, FaThumbsDown } from "react-icons/fa";
 
 export default class ClassComponentDemo extends Component {
   constructor(props) {
     super(props);
-    this.state = { count: 0 };
+    this.state = { incrementCount: 0, decrementCount: 0 };
   }
 
   incrementCount = () => {
     console.log("increment called");
-    this.setState({ count: this.state.count + 1 });
+    this.setState({ incrementCount: this.state.incrementCount + 1 });
+  };
+
+  decrementCount = () => {
+    console.log("decrement called");
+    this.setState({ decrementCount: this.state.decrementCount - 1 });
   };
 
   render() {
@@ -18,10 +24,20 @@ export default class ClassComponentDemo extends Component {
         <div className="mainDiv">
           <ClassComponentNotes />
           <hr />
-          <h3>Smash that like button</h3>
-          <button onClick={this.incrementCount}>
-            Likes: {this.state.count}
-          </button>
+          <h3>Like this</h3>
+          <h5>
+            <button onClick={this.incrementCount}>
+              <FaThumbsUp />
+              {this.state.incrementCount}
+            </button>
+          </h5>
+          <h3>Dislike this</h3>
+          <h5>
+            <button onClick={this.decrementCount}>
+              <FaThumbsDown />
+              {this.state.decrementCount}
+            </button>
+          </h5>
         </div>
       </div>
     );
